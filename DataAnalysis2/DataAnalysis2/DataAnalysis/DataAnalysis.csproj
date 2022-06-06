@@ -161,6 +161,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Students.cs" />
     <Compile Include="MySql\Connection_String.cs" />
     <Compile Include="MySql\MySql_Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

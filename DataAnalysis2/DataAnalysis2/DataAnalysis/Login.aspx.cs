@@ -18,26 +18,41 @@ namespace DataAnalysis
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            MySql_Functions functions = new MySql_Functions();
+            if (string.IsNullOrEmpty(email_TextBox.Text) == false)
+            {
+                if (string.IsNullOrEmpty(password_TextBox.Text) == false)
+                {
+                    MySql_Functions functions = new MySql_Functions();
 
-            int role = functions.login(email_TextBox.Text, password_TextBox.Text);
+                    int role = functions.login(email_TextBox.Text, password_TextBox.Text);
 
-            if(role == 1)
-            {
-                MessageBox.Show("Welcome Admin!");
-            }
-            else if (role == 2)
-            {
-                MessageBox.Show("Welcome Student!");
-            }
-            else if (role == -1)
-            {
-                MessageBox.Show("Check Email and Password!");
+                    if (role == 1)
+                    {
+                        Response.Redirect("Admin.aspx");
+                        //MessageBox.Show("Welcome Admin!");
+                    }
+                    else if (role == 2)
+                    {
+                        MessageBox.Show("Welcome Student!");
+                    }
+                    else if (role == -1)
+                    {
+                        MessageBox.Show("Check Email and Password!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occured, contact the IT!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("PLease Fill Password!");
+                }
             }
             else
             {
-                MessageBox.Show("An error occured, contact the IT!");
-            }
+                MessageBox.Show("PLease Fill Email!");
+            }            
         }
     }
 }

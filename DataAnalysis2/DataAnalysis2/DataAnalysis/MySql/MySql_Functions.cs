@@ -1,5 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DataAnalysis.Models;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -40,9 +42,10 @@ namespace DataAnalysis.MySql
             }
         }
 
+
         public int insert_new_student(string email, string pass)
         {
-            string querry = "INSERT INTO users (Email, Pass, Roli) VALUES ('" + email + "', '" + pass + "', 1);";
+            string querry = "INSERT INTO users (Email, Pass, Roli) VALUES ('" + email + "', '" + pass + "', 2);";
 
             MySqlConnection conn = new MySqlConnection(connectoin_string);
             MySqlCommand cmd = new MySqlCommand(querry, conn);
@@ -100,6 +103,41 @@ namespace DataAnalysis.MySql
             {
                 conn.Close();
                 return -1;
+            }
+        }
+        public ArrayList getAllStudents()
+        {
+            ArrayList students = new ArrayList();
+
+            string query = "SELECT ID, Email FROM users where Roli = 2;";
+
+            MySqlConnection conn = new MySqlConnection(connectoin_string);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader dr;
+
+            try
+            {
+                conn.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Students s = new Students();
+                    s.ID = int.Parse(dr[0].ToString());
+                    s.Email = dr[1].ToString();
+
+                    students.Add(s);
+
+                }
+
+                conn.Close();
+                return students;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                //MessageBox.Show(ex.ToString());
+                return students;
             }
         }
     }

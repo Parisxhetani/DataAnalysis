@@ -20,21 +20,31 @@
     <form id="form1" runat="server">
         <div class="limiter">
             <div class="container-login100">
-                <div class="wrap-login100" style="padding-bottom:10%">
+                <div class="wrap-login100">
 
                     <div class="login100-form-title">
                         <span>Admin Dashboard</span>
                     </div>
 
-                    <div class="divMain" style="padding-bottom:5%;">
+                    <div class="divMain" style="padding-bottom: 3%;">
                         <asp:TextBox ID="EmailTextbox" runat="server" CssClass="input100" placeholder="Email"></asp:TextBox>
                         <asp:TextBox ID="PasswordTextbox" runat="server" CssClass="input100" placeholder="Password"></asp:TextBox>
                     </div>
 
-                    <div class="divMain">
+                    <div class="divMain" style="padding-bottom: 20%">
                         <asp:Button ID="InsertButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="InsertButton_Click" />
                         <asp:Button ID="UpdateButton" runat="server" Text="Update" class="login100-form-btn" OnClick="UpdateButton_Click" />
                         <asp:Button ID="DeleteButton" runat="server" Text="Delete" class="login100-form-btn" OnClick="DeleteButton_Click" />
+                    </div>
+                    <div class="divMain" style="padding-bottom: 3%">
+                        <asp:DropDownList ID="DropDownList1" runat="server" class="login100-form-btn">
+                            <asp:ListItem>Student Email</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:TextBox ID="ClassNameTextBox" runat="server" CssClass="input100" placeholder="Class Name"></asp:TextBox>
+                        <asp:TextBox ID="GradeTextBox" runat="server" CssClass="input100" placeholder="Grade"></asp:TextBox>
+                    </div>
+                    <div class="divMain" style="padding-bottom: 10%">
+                        <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" />
                     </div>
                 </div>
             </div>
