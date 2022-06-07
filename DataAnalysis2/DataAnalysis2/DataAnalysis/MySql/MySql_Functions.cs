@@ -140,5 +140,57 @@ namespace DataAnalysis.MySql
                 return students;
             }
         }
+
+        public int get_student_ID(string email)
+        {
+            int student_ID = 0;
+
+            string query = "SELECT ID FROM users where Email = '" + email + "';";
+
+            MySqlConnection conn = new MySqlConnection(connectoin_string);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader dr;
+
+            try
+            {
+                conn.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    student_ID = int.Parse(dr[0].ToString());
+                }
+
+                conn.Close();
+                return student_ID;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                //MessageBox.Show(ex.ToString());
+                return -1;
+            }
+        }
+
+        public int insert_grade_per_student(int student_id, string class_name, int grade_id)
+        {
+            string querry = "INSERT INTO grades (Student_ID, Class_Name, Grade_ID) VALUES (" + student_id + ", '" + class_name + "', " + grade_id + ");";
+
+            MySqlConnection conn = new MySqlConnection(connectoin_string);
+            MySqlCommand cmd = new MySqlCommand(querry, conn);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return 1;
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                return -1;
+            }
+        }
     }
 }

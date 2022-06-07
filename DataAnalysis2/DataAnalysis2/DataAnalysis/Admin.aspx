@@ -37,14 +37,33 @@
                         <asp:Button ID="DeleteButton" runat="server" Text="Delete" class="login100-form-btn" OnClick="DeleteButton_Click" />
                     </div>
                     <div class="divMain" style="padding-bottom: 3%">
+
+                        <asp:HiddenField ID="EmailHiddenField" runat="server" />
                         <asp:DropDownList ID="DropDownList1" runat="server" class="login100-form-btn">
                             <asp:ListItem>Student Email</asp:ListItem>
                         </asp:DropDownList>
+
+                        <asp:HiddenField ID="GradeHiddenField" runat="server" />
+                        <asp:DropDownList ID="DropDownList2" runat="server" class="login100-form-btn">
+                            <asp:ListItem Value="0">Grade</asp:ListItem>
+                            <asp:ListItem Value="1">A</asp:ListItem>
+                            <asp:ListItem Value="2">A-</asp:ListItem>
+                            <asp:ListItem Value="3">B+</asp:ListItem>
+                            <asp:ListItem Value="4">B</asp:ListItem>
+                            <asp:ListItem Value="5">B-</asp:ListItem>
+                            <asp:ListItem Value="6">C+</asp:ListItem>
+                            <asp:ListItem Value="7">C</asp:ListItem>
+                            <asp:ListItem Value="8">C-</asp:ListItem>
+                            <asp:ListItem Value="9">D+</asp:ListItem>
+                            <asp:ListItem Value="10">D</asp:ListItem>
+                            <asp:ListItem Value="11">D-</asp:ListItem>
+                            <asp:ListItem Value="0">F</asp:ListItem>
+                        </asp:DropDownList>
+
                         <asp:TextBox ID="ClassNameTextBox" runat="server" CssClass="input100" placeholder="Class Name"></asp:TextBox>
-                        <asp:TextBox ID="GradeTextBox" runat="server" CssClass="input100" placeholder="Grade"></asp:TextBox>
                     </div>
                     <div class="divMain" style="padding-bottom: 10%">
-                        <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" />
+                        <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="AddGradeButton_Click" />
                     </div>
                 </div>
             </div>
