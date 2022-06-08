@@ -13,15 +13,5 @@ namespace DataAnalysis
         {
 
         }
-
-        protected void GridViewGrades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void GridViewGrades_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

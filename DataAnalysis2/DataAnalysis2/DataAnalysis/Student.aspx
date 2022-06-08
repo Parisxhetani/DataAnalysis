@@ -25,9 +25,11 @@
                     <div class="login100-form-title">
                         <span>Student Dashboard</span>
                         <div class="divMain" style="padding-bottom: 3%;">
-                            <asp:GridView ID="GridViewGrades" runat="server">
+                            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
 
-                            </asp:GridView>
+                        </div>
+                        <div class:"divMain" style ="padding-bottom: 3%;">
+                            <asp:Button ID="Claculate" runat="server" Text="Calculate GPA" cssClass="login100-form-btn" style="width: 25%; "/>
                         </div>
                     </div>
                 </div>
