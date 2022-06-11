@@ -33,7 +33,8 @@ namespace DataAnalysis
                     }
                     else if (role == 2)
                     {
-                        MessageBox.Show("Welcome Student!");
+                        Response.Redirect("Student.aspx");
+                        //MessageBox.Show("Welcome Student!");
                     }
                     else if (role == -1)
                     {

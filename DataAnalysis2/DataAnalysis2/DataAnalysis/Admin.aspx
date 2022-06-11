@@ -23,7 +23,7 @@
                 <div class="wrap-login100">
 
                     <div class="login100-form-title">
-                        <span>Admin Dashboard</span>
+                        <span>Admin </span><span style="color:#333333;">Dashboard</span>
                     </div>
 
                     <div class="divMain" style="padding-bottom: 3%;">
@@ -57,7 +57,7 @@
                             <asp:ListItem Value="9">D+</asp:ListItem>
                             <asp:ListItem Value="10">D</asp:ListItem>
                             <asp:ListItem Value="11">D-</asp:ListItem>
-                            <asp:ListItem Value="0">F</asp:ListItem>
+                            <asp:ListItem Value="12">F</asp:ListItem>
                         </asp:DropDownList>
 
                         <asp:TextBox ID="ClassNameTextBox" runat="server" CssClass="input100" placeholder="Class Name"></asp:TextBox>
@@ -65,6 +65,7 @@
                     <div class="divMain" style="padding-bottom: 10%">
                         <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="AddGradeButton_Click" />
                     </div>
+                     <asp:Button ID="LogoutButton" runat="server" Text="Logout" class="login100-form-btn" OnClick="LogoutButton_Click" Style="margin:auto; background-color: #333333; width: 20%"/>
                 </div>
             </div>
         </div>
