@@ -36,6 +36,10 @@ namespace DataAnalysis
                 }
             }
         }
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
 
         protected void InsertButton_Click(object sender, EventArgs e)
         {

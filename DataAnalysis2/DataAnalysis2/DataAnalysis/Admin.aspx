@@ -19,7 +19,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="limiter">
+
             <div class="container-login100">
+               
                 <div class="wrap-login100">
 
                     <div class="login100-form-title">
@@ -64,7 +66,9 @@
                     </div>
                     <div class="divMain" style="padding-bottom: 10%">
                         <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="AddGradeButton_Click" />
+                         
                     </div>
+                    <asp:Button ID="LogoutButton" runat="server" Text="Logout" class="login100-form-btn" OnClick="LogoutButton_Click" Style="width: 50%; background-color: #333333; margin: auto;"/>
                 </div>
             </div>
         </div>
