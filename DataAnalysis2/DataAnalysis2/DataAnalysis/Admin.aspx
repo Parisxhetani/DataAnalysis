@@ -39,12 +39,12 @@
                     <div class="divMain" style="padding-bottom: 3%">
 
                         <asp:HiddenField ID="EmailHiddenField" runat="server" />
-                        <asp:DropDownList ID="DropDownList1" runat="server" class="login100-form-btn">
+                        <asp:DropDownList ID="DropDownList1" runat="server" class="login100-form-btn" Style="color:darkgray; background-color: #e6e6e6; border: 0;">
                             <asp:ListItem>Student Email</asp:ListItem>
                         </asp:DropDownList>
 
                         <asp:HiddenField ID="GradeHiddenField" runat="server" />
-                        <asp:DropDownList ID="DropDownList2" runat="server" class="login100-form-btn">
+                        <asp:DropDownList ID="DropDownList2" runat="server" class="login100-form-btn" Style="color:darkgray; background-color: #e6e6e6; border: 0;">
                             <asp:ListItem Value="0">Grade</asp:ListItem>
                             <asp:ListItem Value="1">A</asp:ListItem>
                             <asp:ListItem Value="2">A-</asp:ListItem>
@@ -60,10 +60,10 @@
                             <asp:ListItem Value="12">F</asp:ListItem>
                         </asp:DropDownList>
 
-                        <asp:TextBox ID="ClassNameTextBox" runat="server" CssClass="input100" placeholder="Class Name"></asp:TextBox>
+                        <asp:TextBox ID="ClassNameTextBox" runat="server"  cssClass="login100-form-btn" Style="color:darkgray; background-color: #e6e6e6; border: 0;" placeholder="Class Name"></asp:TextBox>
                     </div>
                     <div class="divMain" style="padding-bottom: 10%">
-                        <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="AddGradeButton_Click" />
+                        <asp:Button ID="AddGradeButton" runat="server" Text="Insert" class="login100-form-btn" OnClick="AddGradeButton_Click"/>
                     </div>
                      <asp:Button ID="LogoutButton" runat="server" Text="Logout" class="login100-form-btn" OnClick="LogoutButton_Click" Style="margin:auto; background-color: #333333; width: 20%"/>
                 </div>

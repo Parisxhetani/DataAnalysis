@@ -23,16 +23,15 @@
                 <div class="wrap-login100">
 
                     <div class="login100-form-title">
-                        <span>Student </span> <span style="color:#333333;">Dashboard</span>
-                        <div class="divMain" style="padding-bottom: 3%;">
+                        <span>Student </span><span style="color: #333333;">Dashboard</span>
+                        <div class="divMain" style="padding-bottom: 3%; padding-top: 5%; margin-left: 26%;">
                             <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
                         </div>
-                        <div class:"divMain" style ="padding-bottom: 3%;">
-                            <asp:Button ID="Claculate" runat="server" Text="Calculate GPA" cssClass="login100-form-btn" style="width: 25%; "/>
+                        <div class="divMain" style="padding-bottom: 3%; padding-top: 5%; margin-left: 26%;">
+                            <asp:Label ID="cgpa_label" runat="server" Text="vk:)"></asp:Label>
                         </div>
                     </div>
-                    <asp:Button ID="LogoutButton" runat="server" Text="Logout" class="login100-form-btn" OnClick="LogoutButton_Click" Style="margin:auto; background-color: #333333; width: 20%"/>
+                    <asp:Button ID="LogoutButton" runat="server" Text="Logout" class="login100-form-btn" OnClick="LogoutButton_Click" Style="margin: auto; background-color: #333333; width: 20%" />
                 </div>
             </div>
         </div>

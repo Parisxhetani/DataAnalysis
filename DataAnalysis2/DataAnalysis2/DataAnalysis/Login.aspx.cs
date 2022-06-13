@@ -1,4 +1,5 @@
-﻿using DataAnalysis.MySql;
+﻿using DataAnalysis.Models;
+using DataAnalysis.MySql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,21 +25,28 @@ namespace DataAnalysis
                 {
                     MySql_Functions functions = new MySql_Functions();
 
-                    int role = functions.login(email_TextBox.Text, password_TextBox.Text);
+                    List<User_Details> user_list = functions.login(email_TextBox.Text, password_TextBox.Text);
+                    if (user_list != null)
+                    {
+                        User_Details user = new User_Details();
+                        user = user_list[0];
 
-                    if (role == 1)
-                    {
-                        Response.Redirect("Admin.aspx");
-                        //MessageBox.Show("Welcome Admin!");
-                    }
-                    else if (role == 2)
-                    {
-                        Response.Redirect("Student.aspx");
-                        //MessageBox.Show("Welcome Student!");
-                    }
-                    else if (role == -1)
-                    {
-                        MessageBox.Show("Check Email and Password!");
+                        if (user.Role == 1)
+                        {
+                            Session["User_ID"] = user.ID;
+                            Response.Redirect("Admin.aspx");
+                            //MessageBox.Show("Welcome Admin!");
+                        }
+                        else if (user.Role == 2)
+                        {
+                            Session["User_ID"] = user.ID;
+                            Response.Redirect("Student.aspx");
+                            //MessageBox.Show("Welcome Student!");
+                        }
+                        else if (user.Role == -1)
+                        {
+                            MessageBox.Show("Check Email and Password!");
+                        }                        
                     }
                     else
                     {
@@ -53,7 +61,7 @@ namespace DataAnalysis
             else
             {
                 MessageBox.Show("PLease Fill Email!");
-            }            
+            }
         }
     }
 }
